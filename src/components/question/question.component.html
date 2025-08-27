@@ -1,0 +1,57 @@
+@if (question)
+{
+    <div class="container rounded border" [class.border-success]="isCorrect == true" [class.border-danger]="isCorrect == false">
+        <div class="row">
+            <div class="col-auto text-secondary">
+                <h6>Question {{question.index + 1}}:</h6>
+            </div>
+
+            @if (isCorrect != undefined)
+            {
+                <div class="col-auto">
+                    @if(isCorrect)
+                    {
+                        <div class="text-success">
+                            <h6>
+                                <strong>Your answer is correct!</strong>
+                            </h6>
+                        </div>
+                    }
+                    @else 
+                    {
+                        <div class="text-danger">
+                            <h6>
+                                <strong>Your answer is incorrect!</strong>
+                            </h6>
+                        </div>
+                    }
+                </div>
+            }
+            
+        </div>
+
+        <div class="row">
+            <div class="col" [class.text-success]="isCorrect == true" [class.text-danger]="isCorrect == false">
+                <h5>{{question.question}}</h5>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div>
+                @for (possibleAnswer of question.possibleAnswers; track $index) 
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadio{{question.index}}" id="flexRadio{{question.index}}" (change)="onChooseAnswer(possibleAnswer)">
+                        <label class="form-check-label" for="flexRadio{{question.index}}">
+                            {{possibleAnswer}}
+                        </label>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+}
+
