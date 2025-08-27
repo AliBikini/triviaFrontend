@@ -7,7 +7,7 @@ Front-end for the assignment for Quad Solutions.
 ## Installation
 
 This application runs on localhost and uses port 4200. Make sure the port is available on your system.  
-To run this application, make sure you have the latest version of node (https://nodejs.org/en/download) and the latest version of Angular (run "npm install -g @angular/cli" when node is installed) installed.  
+To run this application, make sure you have the latest version of node (https://nodejs.org/en/download) and the latest version of Angular CLI (**run "npm install -g @angular/cli" when node is installed**) installed.  
 
 **To run this application:**  
 Step 1: Open a command-line and navigate to the root folder of this project  
